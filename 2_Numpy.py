@@ -58,7 +58,7 @@ def numpyOperations():
     print(np.sqrt(a))
 
 
-def multipleDimensionOperations():
+def multipleDimensionOperations1():
     a = np.array([x for x in range(0,8)])
     b = np.array([a, a*2])
     c = np.array([a, a*2, a*1.5])
@@ -71,8 +71,44 @@ def multipleDimensionOperations():
     print("Sum of items by column: ", c.sum(axis=0))
     print("Sum of items by row: ", c.sum(axis=1))
 
+    print("\nArray creation:")
+    d = np.zeros((3, 4), dtype="f")
+    print("\nZerros array: ", d)
+    e = np.ones((2,3,4), dtype="i")
+    print("\nOnes array: ", e)
+    f = np.zeros_like(e)
+    print("\nZeros array based on another array: ", f)
+    f = np.ones_like(e)
+    print("\nOnes array based onn another array: ", f)
+    g = np.empty((2,3,4))
+    print("\nEmpty array: : ", g)
+    print("\nEye type array: ", np.eye(5))
+
+    print("\nArray properties --> f:")
+    print(f)
+    print("Size: ", f.size)
+    print("Item size: ", f.itemsize)
+    print("# dimensions: ", f.ndim)
+    print("Shape: ", f.shape)
+    print("Dtype: ", f.dtype)
+    print("# bytes: ", f.nbytes)
+
+
+def multipleDimensionOperations2():
+    a = np.array([x for x in range(0,15)])
+    b = np.arange(15)
+    print(a, "\n", b)
+    print(np.shape(b))
+    print(b.shape)
+    print("\nTranspose operations: ")
+    c = b.reshape(5,3)
+    print(c.T)
+    print(c.transpose())
+    print("\nReshape vs resize: ")
+    print(b.reshape(3,5))
+    print(np.resize(b, (1,5)))
 
 
 #arrayOperartions()
 #numpyOperations()
-multipleDimensionOperations()
+multipleDimensionOperations2()
