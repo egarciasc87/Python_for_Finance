@@ -109,6 +109,19 @@ def multipleDimensionOperations2():
     print(np.resize(b, (1,5)))
 
 
+def booleanArray():
+    a = np.arange(12)
+    print(a)
+    b = a.reshape(3,4)
+    print(b)
+    print("\nCompare: ")
+    c = ((b % 2 == 0) | (b % 3 == 0))
+    print(c)
+    c =  (b > 9)
+    print(c)
+
+
 #arrayOperartions()
 #numpyOperations()
-multipleDimensionOperations2()
+#multipleDimensionOperations2()
+booleanArray()
