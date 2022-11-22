@@ -100,10 +100,12 @@ def multipleDimensionOperations2():
     print(a, "\n", b)
     print(np.shape(b))
     print(b.shape)
+
     print("\nTranspose operations: ")
     c = b.reshape(5,3)
     print(c.T)
     print(c.transpose())
+
     print("\nReshape vs resize: ")
     print(b.reshape(3,5))
     print(np.resize(b, (1,5)))
@@ -114,14 +116,40 @@ def booleanArray():
     print(a)
     b = a.reshape(3,4)
     print(b)
-    print("\nCompare: ")
+
+    print("\nCompare values inside array: ")
     c = ((b % 2 == 0) | (b % 3 == 0))
     print(c)
     c =  (b > 9)
     print(c)
 
+    print("\nFilter values inside array: ")
+    print("Original array: ", b)
+    c = b[b > 4]
+    print("New array: ", c)
+    c = b[b % 5 == 0]
+    print("New array: ", c)
+    c = np.where(b % 3 == 0, 1, 0)
+    print("New array: ", c)
+    c = np.where(b % 2 == 0, "even", "odd")
+    print("New array: ", c)
+    c = np.where(b > 5, "ctm", "hola")
+    print("New array: ", c)
+
+
+def structuredArrayOperations():
+    a = np.dtype([("Name", "S10"), ("Age", "i"), ("Height", "i")])
+    print(a)
+    #b = np.dtype({"names": ["Name", "Age", "Height"], "formats": "O int int"})
+    b = np.array([("Elena", 34, 175), ("Erick", 35, 179)], dtype=a)
+    print(b)
+    print(b["Name"])
+    print(b[0])
+    print(b[0]["Name"])
+
 
 #arrayOperartions()
 #numpyOperations()
 #multipleDimensionOperations2()
-booleanArray()
+#booleanArray()
+structuredArrayOperations()
